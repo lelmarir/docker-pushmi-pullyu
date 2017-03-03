@@ -98,5 +98,6 @@ cmd="$remote_shell -R '$registry_port:$registry_host:$registry_port' '$deploy_ta
 eval $cmd <<EOF
   docker pull "$registry_host:$registry_port/$image_name" \
     && docker tag "$registry_host:$registry_port/$image_name" "$image_name" \
-    && for tag in ${tags:-}; do docker tag "$registry_host:$registry_port/$image_name" "$image_name:\$tag"; done
+    && for tag in ${tags:-}; do docker tag "$registry_host:$registry_port/$image_name" "$image_name:\$tag"; done \
+    && docker rmi "$registry_host:$registry_port/$image_name"
 EOF
