@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 set -o errexit
 set -o pipefail
 set -o nounset
@@ -16,7 +16,7 @@ cleanup() {
 
 usage() {
   echo "
-Usage:	$0 [OPTION...] IMAGE  [USER@]HOSTNAME
+Usage:	$0 [OPTION...] IMAGE_NAME[:TAG]  [USER@]HOSTNAME
 
 Push an image directly to a remote host (without a separate registry)
 
